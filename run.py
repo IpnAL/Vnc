@@ -242,7 +242,7 @@ vnc_passwd = "12345678"[:8]
 vnc_viewonly_passwd = "87654321"[:8]
 print("✂️"*24)
 print("VNC password: {}".format(vnc_passwd))
-print("VNC view only password: {}".format(vnc_viewonly_passwd))
+print("VNC view only : {}".format(vnc_viewonly_passwd))
 print("✂️"*24)
 vncpasswd_input = "{0}\\n{1}".format(vnc_passwd, vnc_viewonly_passwd)
 vnc_user_dir = pathlib.Path.home().joinpath(".vnc")
@@ -279,7 +279,7 @@ def setupVNC(ngrok_region = None, check_gpu_available = True):
   print(msg)
 
 def apps():
-  !sudo add-apt-repository ppa:obsproject/obs-studio -y
+  sudo add-apt-repository ppa:obsproject/obs-studio -y
   clear_output()
   my_apt = _MyApt()
   my_apt.installPkg("obs-studio", "vlc", "firefox", "xarchiver", "xfce4", "xfce4-goodies")
